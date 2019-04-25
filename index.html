@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>shastasublime: calebotamus</title>
+    <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
 </head>
 <body>
     <h1>hello</h1>
+    <script>
+    var sc = require('steemconnect');
+
+        var api = sc.Initialize({
+            app: 'calebotamus',
+            callbackURL: 'https://shastasublime.github.io/success.html',
+            accessToken: 'access_token',
+            scope: ['vote', 'comment']
+        });
+        var link = api.getLoginURL(state);
+            console.log(link)
+ //=> https://steemconnect.com/oauth2/authorize?client_id=[app]&redirect_uri=[callbackURL]&scope=vote,comment&state=[state]
+    </script>
 </body>
 </html>
